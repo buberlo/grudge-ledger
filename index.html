@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A shared grudge ledger for logging canceled plans, late replies, and forgotten favors." />
+    <meta name="theme-color" content="#1f1a17" />
+    <title>Cobweb Ledger — Shared Grudge Books</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%95%B8%EF%B8%8F%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+
+      html,
+      body,
+      #root {
+        min-height: 100%;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(circle at 20% 20%, rgba(245, 239, 230, 0.08), transparent 30%),
+          radial-gradient(circle at 80% 70%, rgba(180, 120, 90, 0.12), transparent 35%),
+          #1f1a17;
+        color: #f5efe6;
+        font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      }
+
+      .boot-splash {
+        min-height: 100vh;
+        display: grid;
+        place-content: center;
+        justify-items: center;
+        gap: 0.75rem;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .boot-cobweb {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        border: 2px solid rgba(245, 239, 230, 0.22);
+        position: relative;
+        animation: spin 1.8s linear infinite;
+      }
+
+      .boot-cobweb::before,
+      .boot-cobweb::after {
+        content: "";
+        position: absolute;
+        inset: 12px;
+        border-radius: 50%;
+        border: 1px solid rgba(245, 239, 230, 0.16);
+      }
+
+      .boot-cobweb::after {
+        inset: 30px;
+        border-color: rgba(245, 239, 230, 0.1);
+      }
+
+      .boot-splash p {
+        margin: 0;
+        font-size: 1.05rem;
+        letter-spacing: 0.02em;
+        opacity: 0.86;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="boot-splash">
+        <div class="boot-cobweb" aria-hidden="true"></div>
+        <p>Spinning your grudge ledger…</p>
+      </div>
+    </div>
+
+    <noscript>
+      <div class="boot-splash">
+        <p>Cobweb Ledger needs JavaScript to track the debt.</p>
+      </div>
+    </noscript>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
